@@ -1,46 +1,20 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
+import FacultyDashboard from "./pages/FacultyDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
 
 function App() {
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/students/")
-      .then(res => res.json())
-      .then(data => setStudents(data));
-  }, []);
-
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">EduTrack</h1>
-
-      <h3 className="mb-3">Student List</h3>
-
-      <table className="table table-bordered table-striped">
-        <thead className="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>USN</th>
-            <th>Department</th>
-            <th>Email</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {students.map(student => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.usn}</td>
-              <td>{student.department}</td>
-              <td>{student.email}</td>
-              <td>{student.year}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/faculty" element={<FacultyDashboard />} />
+        <Route path="/student" element={<StudentDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
