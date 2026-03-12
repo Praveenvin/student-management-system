@@ -1,0 +1,83 @@
+.dashboard{
+display:flex;
+height:100vh;
+font-family:Segoe UI;
+}
+
+.sidebar{
+width:230px;
+background:#f8fafc;
+padding:20px;
+border-right:1px solid #ddd;
+}
+
+.sidebar ul{
+list-style:none;
+margin-top:30px;
+}
+
+.sidebar li{
+margin-bottom:15px;
+}
+
+.sidebar a{
+text-decoration:none;
+color:#333;
+}
+
+.main{
+flex:1;
+background:#f1f5f9;
+}
+
+.navbar{
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+background:white;
+border-bottom:1px solid #ddd;
+}
+
+.navbar input{
+width:350px;
+padding:8px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+background:#3b82f6;
+color:white;
+width:35px;
+height:35px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.content{
+padding:30px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.stat-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
+}
